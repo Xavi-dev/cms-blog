@@ -1,0 +1,157 @@
+@font-face {
+  font-family: 'ubuntulight';
+  src: url('../../fonts/ubuntu-l-webfont.woff2') format('woff2'),
+       url('../../fonts/ubuntu-l-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ubunturegular';
+  src: url('../../fonts/ubuntu-r-webfont.woff2') format('woff2'),
+       url('../../fonts/ubuntu-r-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {margin: 0; padding: 0;}
+
+.container-footer {
+  background: #212529;
+}
+
+/*.btn-green {background: #449BA7; border: none;}
+.btn-green:hover {background: #3b8791; border: none;}
+.btn-brown {background: #E9B96E; border: none;}
+.btn-brown:hover {background: #e4ab4e; border: none;}
+.btn-red {background: #DA5655; border: none;}
+.btn-red:hover {background: #d64343; border: none;}
+.green-link:hover {color: #449BA7;}*/
+.class-body {background: #fafafa; font-family: 'ubuntulight'; color: #242929;}
+.text-085rem {font-size: 0.85rem;}
+.table-bg-grey {background: #F1F3F3;}
+.color-green {color: #32727B;}
+.color-green:hover {color: #66AEB7;}
+.color-footer-link:hover {color: #66AEB7;}
+
+.message {position: absolute; left: 20px; right: 20px; top: 65px; z-index: 1; padding: 8px 40px 10px 12px; font-family: 'ubunturegular';}
+
+#x-alert {padding: 0.7rem 0.7rem;}
+
+.grey-color {color: #404040;}
+.green-color {color: #92cbd3}
+.bg-yellow-color {background: #eec974;}
+.bg-grey-color {background: #404040;}
+.bg-green-color {background: #4aa9b5}
+.bg-red-color {background: #F04444;}
+.ubuntu-r {font-family: 'ubunturegular';}
+
+/* ---------------------------- Nav bar ----------------------------- */
+
+.overlay {
+  height: 100%;
+  width: 0px;
+  position: fixed;
+  z-index: 3;
+  left: 0px;
+  top: 0px;
+  background: #242929; 
+  overflow-x: hidden; 
+  transition: 0.5s;
+}
+.overlay-content {
+  position: relative;
+  width: 100%;
+}
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 2.2rem;
+  color: #fafafa;
+  display: block; 
+  transition: 0.3s;
+}
+.overlay a:hover, .overlay a:focus {
+  color: #a0abab;
+}
+.overlay .closebtn {
+  font-size: 3.7rem;
+}
+.container-burguer {
+  width: 100%;
+  height: 42px;
+  background: #fafafa;
+  z-index: 1;
+}
+
+.form-control:focus {box-shadow: none;}
+.form-select:focus {box-shadow: none;}
+
+a {text-decoration: none; color: #fafafa;}
+
+.navbar-toggler:focus {box-shadow: none;}
+.navbar-toggler {border: none; padding: 0;}
+.navbar {padding: 0;}
+footer p {margin: 0;}
+footer p a:hover {color: #6C757D;} 
+.logo-nav {max-width: 250px; max-height: 40px; padding: 3px; margin-right: 20px;}
+
+
+/*///////////////////////////////// PC STYLES + BIG PC STYLES MIN: 1200px /////////////////////////*/
+
+@media screen and (min-width: 1200px) {
+  .container-25 {width: 25%;}
+  body, .form-control, #select {font-size: 1rem;}
+  .icon-social-footer {width: 50px; margin: 5px;}
+  .post-card {padding: 50px;}
+  .div-comment {width: 50%;} 
+  li.nav-item a {border-right: 1px solid grey;}
+  }
+
+/*///////////////////////////////// LAPTOP + PC STYLES // MIN: 992px /////////////////////////*/
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .container-25 {width: 25%;}
+  .container-acces-50 {width: 50%;}
+  body, .form-control, .btn, #select {font-size: 1rem;}
+  .icon-social-footer {width: 50px; margin: 5px;}
+  .post-card {padding-top: 50px;}
+  .div-comment {width: 60%;}
+  li.nav-item a {border-right: 1px solid grey;} 
+  }
+  
+  /*/////////////////////////////// TABLET LANDSCAPE STYLES ///////////////////////////////////////////*/
+  
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    body, .form-control, .btn, #select {font-size: 1rem;}
+    .container-acces-50 {width: 50%;}
+    .logo-nav {padding: 5px;}
+    .icon-social-footer {width: 50px; margin: 5px;}
+    .post-card {padding-top: 50px;}
+    .div-post-text {padding-top: 20px;}
+    .post-text {font-size: 0.90rem;}
+    .post-date {font-size: 0.80rem; margin-bottom: 10px;}
+  }
+  
+   /*/////////////////////////////// TABLET STYLES ///////////////////////////////////////////*/
+  
+  @media screen and (min-width: 575px) and (max-width: 768px) {
+    body, .form-control, .btn, #select {font-size: 1rem;}
+    .logo-nav {padding: 5px;}
+    .icon-social-footer {width: 50px; margin: 5px;}
+    .post-card {padding-top: 50px;}
+    .div-post-text {padding-top: 20px;}
+    .post-text {font-size: 0.90rem;}
+    .post-date {font-size: 0.80rem; margin-bottom: 10px;}
+    }
+  
+   /*/////////////////////////////// MOBILE STYLES ///////////////////////////////////////////*/
+  
+  @media screen and (max-width: 575px) {
+    body, .form-control, .btn, #select {font-size: 1rem;}
+    .logo-nav {padding: 5px;}
+    .icon-social-footer {width: 50px; margin: 5px;}
+    .post-card {padding-top: 50px;}
+    .div-post-text {padding-top: 20px;}
+    .post-text {font-size: 0.85rem;}
+    .post-date {font-size: 0.75rem; margin-bottom: 10px;}
+  }
