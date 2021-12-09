@@ -103,7 +103,7 @@ $resultPrivacy = $privacy->readPrivacyPage();
 <script src="https://cdn.ckeditor.com/ckeditor5/29.1.0/classic/ckeditor.js"></script>
 
 <script>
-  CKEDITOR.replace('text');
+     CKEDITOR.replace('text');
 </script>
 
 </body>
