@@ -20,7 +20,7 @@ include("includes/header_front.php");
       if ($password != $confirmPassword) {
          $error = "Error, the passwords are not equal!";
       }else{
-         if ($user->validate_email($email)) {
+         if ($user->validate_email($email)) {                             // Validate if the email already exists in the database
             if ($user->register($name, $nick, $email, $password)) {
                $message = "You have successfully registered";
             }else{
