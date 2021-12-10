@@ -2,10 +2,10 @@
 
 include("includes/header_front.php");
 
-   $dataBase = new Basemysql();
+   $dataBase = new Basemysql(); // Connect to database
    $db = $dataBase->connect();
 
-   $user = new User($db);
+   $user = new User($db); // Instantiate the User class
 
    if(isset($_POST['acces'])){
       $nick = $_POST['nick'];
@@ -15,8 +15,8 @@ include("includes/header_front.php");
       $error = "Error, there are empty fields.";
       }else{
          if($user->acces($nick, $password)){
-            $_SESSION['blog_user_log'] = true; # Creem una sessió blog_user_log
-            $_SESSION['nick'] = $nick;
+            $_SESSION['blog_user_log'] = true; // Create a session blog_user_log
+            $_SESSION['nick'] = $nick; // Get the nick 
             $message = "You are logged in.";
          }else{
             $error = "Error, the email or password is not correct!";
