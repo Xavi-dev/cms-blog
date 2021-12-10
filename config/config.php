@@ -1,9 +1,7 @@
 <?php 
 
-# Rutes del projecte creades amb constants.
-
-#Ruta per admin
+// Admin link
 define('RUTA_ADMIN', 'https://your-domain-name/cms-blog/admin/');
 
-#Ruta per front(public)
+// Admin front(public)
 define('RUTA_FRONT', 'https://your-domain-name/cms-blog/');
