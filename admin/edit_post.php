@@ -2,22 +2,22 @@
 
 include("../includes/header-code.php");
 
-$dataBase = new Basemysql();
+$dataBase = new Basemysql();  // Connect to database
 $db = $dataBase->connect();
 
-if (isset($_GET['id'])) {
+if (isset($_GET['id'])) {  // Get the id
     $id = $_GET['id'];
 }
 
-$posts = new Post($db);
-$result = $posts->read_individual($id);
-
+$posts = new Post($db);  // Instantiate the Post class
+$result = $posts->read_individual($id);  // Call the read_individual method of the Post class
+ 
 if (isset($_POST['editPost'])) {
     $idPost = $_POST["id"];
     $title = $_POST["title"];
     $text = $_POST["text"];
 
-    if ($_FILES["image"]["error"] > 0) {
+    if ($_FILES["image"]["error"] > 0) {   // If image is not updated
         if (empty($title) || empty($text)) {
             $error = "Error, there are empty fields.";
         } else {
@@ -33,18 +33,17 @@ if (isset($_POST['editPost'])) {
             }
         }
     } else {
-        //Si no, si s'ha pujat l'imatge...
-        if (empty($title) || $title == '' || empty($text) || $text == '') {
+        if (empty($title) || $title == '' || empty($text) || $text == '') {   // If image is updated
             $error = "Error, there are empty fields.";
         } else {
             $image = $_FILES['image']['name'];
-            $imageArr = explode('.', $image);
-            $rand = rand(1000, 99999);
-            $newImageName = $imageArr[0] . $rand . '.' . $imageArr[1];
+            $imageArr = explode('.', $image);   // Separate image by a dot
+            $rand = rand(1000, 99999);  // random number for image
+            $newImageName = $imageArr[0] . $rand . '.' . $imageArr[1];  // = imagename(random number).jpg
             $finalRoute = "../img/img_posts/" . $newImageName;
             move_uploaded_file($_FILES['image']['tmp_name'], $finalRoute);
 
-            $post = new Post($db);
+            $post = new Post($db);  // Instantiate Post class
 
             if ($post->update($idPost, $title, $text, $newImageName)) {
                 $message = "Post successfully edited.";
@@ -59,7 +58,7 @@ if (isset($_POST['editPost'])) {
 if (isset($_POST['deletePost'])) {
     $idPost = $_POST['id'];
 
-    $post = new Post($db);
+    $post = new Post($db);  // Instantiate Post class
 
     if ($post->delete($idPost)) {
         $message = "Post successfully deleted.";
@@ -97,7 +96,7 @@ if (isset($_POST['deletePost'])) {
 
             <table class="table" style="width:100%">
 
-                <form method="POST" action="" enctype="multipart/form-data">
+                <form method="POST" action="" enctype="multipart/form-data">  <!-- enctype="multipart/form-data" for sending files in the form -->
 
                     <input type="hidden" name="id" value="<?php echo $result->id; ?>">
 
