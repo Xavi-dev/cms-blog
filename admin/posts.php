@@ -2,15 +2,13 @@
 
 include("../includes/header-code.php");
 
-$dataBase = new Basemysql();
+$dataBase = new Basemysql();   // Connect to database
 $db = $dataBase->connect();
 
-$posts = new Post($db);
-$result = $posts->read();
+$posts = new Post($db);   // Instantiate the Post class
+$result = $posts->read();  // Call the read metho of the Post class
 
 ?>
-
-
 
 <div class="row">
     <div class="col-sm-12">
@@ -22,7 +20,6 @@ $result = $posts->read();
         <?php endif; ?>
     </div>
 </div>
-
 
 <div class="container mt-5">
 
@@ -57,7 +54,7 @@ $result = $posts->read();
                         <td>
                             <img class="img-fluid" src="../img/img_posts/<?php echo $post->image;?>" style="width:180px;">
                         </td>
-                        <td><?php echo substr($post->text, 0, 250) . "..."; ?></td>
+                        <td><?php echo substr($post->text, 0, 250) . "..."; ?></td>  <!-- Cut the text to 250 characters -->
                         <td><?php echo $post->created_date; ?></td>
                         <td>
                             <a href="edit_post.php?id=<?php echo $post->id; ?>" class="btn bg-yellow-color ubuntu-r">Edit</a>
