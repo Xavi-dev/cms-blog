@@ -2,11 +2,11 @@
 
 include("includes/header_front.php");
 
-   $dataBase = new Basemysql();
+   $dataBase = new Basemysql(); // Connect to database
    $db = $dataBase->connect();
 
-   $cookiesPage = new Legals($db);
-   $result = $cookiesPage->readCookiesPage();
+   $cookiesPage = new Legals($db); // Instantiate the Legals class
+   $result = $cookiesPage->readCookiesPage(); // Call to readCookiesPage method of the Legals class
 
 ?>
 
