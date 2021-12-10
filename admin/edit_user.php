@@ -2,19 +2,18 @@
 
 include("../includes/header-code.php");
 
-$dataBase = new Basemysql();
+$dataBase = new Basemysql();  // Connect to database
 $db = $dataBase->connect();
 
-//Validem si s'ha enviat l'id
-if (isset($_GET['id'])) {
+if (isset($_GET['id'])) {  // Get the id
     $id = $_GET['id'];
 }
 
-$user = new User($db);
-$result = $user->read_individual($id);
+$user = new User($db);  // Instantiate the User class
+$result = $user->read_individual($id);  // Call the read_individual method of the User class
 
 if (isset($_POST["editUser"])) {
-    $idUser = $_GET["id"]; # El recollim del input "hidden".
+    $idUser = $_GET["id"]; 
     $role = $_POST["role"];
 
     if (empty($idUser) || empty($role)) {
@@ -31,7 +30,7 @@ if (isset($_POST["editUser"])) {
 }
 
 if (isset($_POST["deleteUser"])) {
-    $idUser = $_GET["id"]; # El recollim del input "hidden".
+    $idUser = $_GET["id"]; 
 
     if (empty($idUser)) {
         $error = "Error, there are empty fields.";
@@ -78,7 +77,6 @@ if (isset($_POST["deleteUser"])) {
                     <table class="table" style="width:100%">
 
                         <form method="POST">
-                            <!-- Amb l'input hidden li passem el valor de user_id -->
                             <input type="hidden" value="<?php echo $result->user_id; ?>">
 
                             <div class="mb-3">
