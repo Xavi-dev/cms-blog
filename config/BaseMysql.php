@@ -1,10 +1,10 @@
 <?php 
 
 class Basemysql{
-    private $host = '';
-    private $db_name = '';
-    private $username = '';
-    private $password = '';
+    private $host = '';       // Your hostname
+    private $db_name = '';    // Your database name
+    private $username = '';   // Your user name of the database 
+    private $password = '';   // Your password of the database
     private $conn;
 
 
