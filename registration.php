@@ -2,10 +2,9 @@
 
 include("includes/header_front.php");
 
-   $dataBase = new Basemysql();
-   $db = $dataBase->connect();
-
-   $user = new User($db);
+   $dataBase = new Basemysql(); // Connect to database
+   $db = $dataBase->connect();  
+   $user = new User($db); // Instantiate the user class
 
    if (isset($_POST['register'])) {
       $name = $_POST['name'];
