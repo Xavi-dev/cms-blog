@@ -2,11 +2,11 @@
 
 include("includes/header_front.php");
 
-   $dataBase = new Basemysql();
+   $dataBase = new Basemysql(); // Connect to database
    $db = $dataBase->connect();
 
-   $privacyPage = new Legals($db);
-   $result = $privacyPage->readPrivacyPage();
+   $privacyPage = new Legals($db); // Instantiate the Legals class
+   $result = $privacyPage->readPrivacyPage(); // Call to readPrivacyPage method of Legals class
 
 ?>
 
