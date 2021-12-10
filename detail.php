@@ -2,18 +2,18 @@
 
 include("includes/header_front.php");
 
-   $dataBase = new Basemysql();
+   $dataBase = new Basemysql(); // Connect to database
    $db = $dataBase->connect();
 
-   if (isset($_GET["id"])) {
+   if (isset($_GET["id"])) { // Get the id post
       $idPost = $_GET["id"];
    }
 
-   $post = new Post($db);
-   $result = $post->read_individual($idPost);
+   $post = new Post($db); // Instantiate the Post class
+   $result = $post->read_individual($idPost); // Call to read_individual method of the Post class
 
-   $commentObj = new Comment($db);
-   $result2 = $commentObj->readById($idPost);
+   $commentObj = new Comment($db); // Instantiate the Comment class
+   $result2 = $commentObj->readById($idPost); // Call to readById method of the Comment class
 
    if (isset($_POST['send_comment'])) {
       $idPost = $_POST['post'];
@@ -71,7 +71,7 @@ include("includes/header_front.php");
       </div>
    </div>
 
-<?php if (isset($_SESSION['blog_user_log'])) : ?>
+<?php if (isset($_SESSION['blog_user_log'])) : ?> <!-- Only if the user is logged in with blog_user_log, can post comments -->
    
    <div class="row mt-5">
       <div class="col-12 div-comment mx-auto">
