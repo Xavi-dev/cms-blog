@@ -1,6 +1,6 @@
 <?php
 
-require "config/config.php";
+require "config/config.php";      // Require all the models, connection(BaseMysql.php), config and helpers.
 require "config/BaseMysql.php";
 require "helpers/helpers.php";
 require "models/Post.php";
@@ -9,13 +9,13 @@ require "models/User.php";
 require "models/Customise.php";
 require "models/Legals.php";
 
-   $dataBase = new Basemysql();
+   $dataBase = new Basemysql(); // Connect to database
    $db = $dataBase->connect();
 
-   $customObj = new Customise($db);
-   $resultCustom = $customObj->readCustomiseLogo();
+   $customObj = new Customise($db); // Instantiate Customise class
+   $resultCustom = $customObj->readCustomiseLogo(); // Call the readCustomiseLogo method of the Customise class
 
-   session_start();
+   session_start(); // Initialise session
 
 ?>
 
@@ -24,8 +24,8 @@ require "models/Legals.php";
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-         <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">    
-         <link rel="stylesheet" href="css-blog/style-blog.css">
+         <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">   <!-- bootstrap link -->
+         <link rel="stylesheet" href="css-blog/style-blog.css">   <!-- styles css link -->
          <title>CRM BLOG</title>
    </head>
 
@@ -47,7 +47,7 @@ require "models/Legals.php";
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-         <?php if (isset($_SESSION['blog_user_log'])) : ?>
+         <?php if (isset($_SESSION['blog_user_log'])) : ?>   <!-- If the session is already initialised, we show the administration navigation bar. -->
 
             <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
@@ -78,7 +78,7 @@ require "models/Legals.php";
 
    <ul class="navbar-nav mb-2 mb-lg-0">
 
-   <?php if (!isset($_SESSION['blog_user_log'])) : ?>
+   <?php if (!isset($_SESSION['blog_user_log'])) : ?>   <!-- If the session is not initialised, we show the public navigation bar. -->
           
       <li class="nav-item">
          <a class="nav-link" href="index.php">Home</a>
@@ -94,7 +94,7 @@ require "models/Legals.php";
    <?php if (isset($_SESSION['blog_user_log'])) : ?>
 
        <li class="nav-item">
-          <a class="nav-link" href="<?php echo RUTA_FRONT; ?>exit.php">Log out</a>
+          <a class="nav-link" href="<?php echo RUTA_FRONT; ?>exit.php">Log out</a>   <!-- If the session is already initialised, we show the log out link. -->
        </li>
     </ul>
 
