@@ -55,7 +55,7 @@ class Post
     // UPDATE POST
     public function update($id, $title, $text, $newImageName)
     {
-        if ($newImageName == "") { 
+        if ($newImageName == "") {    // If no image is uploaded
             $query = 'UPDATE ' . $this->table . ' SET title = :title, text = :text WHERE id = :id';
             $stmt = $this->conn->prepare($query);
             $stmt->bindParam(":title", $title, PDO::PARAM_STR);
@@ -64,8 +64,8 @@ class Post
 
             if ($stmt->execute()) {
                 return true;
-            }
-        } else {
+            } 
+        } else {    // If image is uploaded
             $query = 'UPDATE ' . $this->table . ' SET title = :title, text = :text, image = :image WHERE id = :id';
             $stmt = $this->conn->prepare($query);
             $stmt->bindParam(":title", $title, PDO::PARAM_STR);
