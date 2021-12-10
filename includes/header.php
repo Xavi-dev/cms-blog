@@ -1,6 +1,6 @@
 <?php
 
-require "../config/config.php";
+require "../config/config.php";      // Require all the models, connection(BaseMysql.php), config and helpers.
 require "../config/BaseMysql.php";
 require "../helpers/helpers.php";
 require "../models/Post.php";
@@ -10,17 +10,17 @@ require "../models/Customise.php";
 require "../models/Legals.php";
 
 
-session_start();
+session_start();  // Initialise session
 
-   if (!$_SESSION['blog_user_log']) {
+   if (!$_SESSION['blog_user_log']) {  // if blog_user_log session is not active, redirect to acces.php
       header("Location: ../acces.php");
    }
 
-   $dataBase = new Basemysql();
+   $dataBase = new Basemysql();  // Connect to database
    $db = $dataBase->connect();
 
-   $customObj = new Customise($db);
-   $resultCustom = $customObj->readCustomiseLogo();
+   $customObj = new Customise($db);  // Instantiate the Customise class
+   $resultCustom = $customObj->readCustomiseLogo();  // Call the readCustomiseLogo method of the Customise class
 
 ?>
 
@@ -29,8 +29,8 @@ session_start();
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-         <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">    
-         <link rel="stylesheet" href="../css-blog/style-blog.css">
+         <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">    <!-- Bootstrap css link -->
+         <link rel="stylesheet" href="../css-blog/style-blog.css">    <!-- Styles css link -->
          <title>CRM BLOG</title>
    </head>
 
@@ -57,7 +57,7 @@ session_start();
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             
-                     <?php if (isset($_SESSION['blog_user_log'])) : ?>
+                     <?php if (isset($_SESSION['blog_user_log'])) : ?>   <!-- If the session is already initialised, we show the administration navigation bar. -->
                                 
                         <li>
                            <a class="dropdown-item" href="<?php echo RUTA_ADMIN; ?>posts.php">Posts</a>
@@ -87,7 +87,7 @@ session_start();
 
                 <ul class="navbar-nav mb-2 mb-lg-0">
 
-                   <?php if (!isset($_SESSION['blog_user_log'])) : ?>
+                   <?php if (!isset($_SESSION['blog_user_log'])) : ?>   <!-- If the session is not initialised, we show the public navigation bar. -->
 
                       <li class="nav-item">
                          <a class="nav-link" href="index.php">Home</a>
@@ -101,7 +101,7 @@ session_start();
 
                     <?php endif; ?>
 
-                    <?php if (isset($_SESSION['blog_user_log'])) : ?>
+                    <?php if (isset($_SESSION['blog_user_log'])) : ?>   <!-- If the session is already initialised, we show the log out link. -->
                        <li class="nav-item">
                           <a class="nav-link" href="<?php echo RUTA_FRONT; ?>exit.php">Log out</a>
                        </li>
