@@ -2,14 +2,15 @@
 
 include("includes/header_front.php");
 
-   $dataBase = new Basemysql();
+   $dataBase = new Basemysql(); // Connect to database
    $db = $dataBase->connect();
 
-   $posts = new Post($db);
-   $result = $posts->read();
+   $posts = new Post($db); // Instantiate the Post class
+   $result = $posts->read(); // Call to read method of the Post class
 
-   $customObj = new Customise($db);
-   $resultCustom = $customObj->readCustomiseHeaderImage();
+   $customObj = new Customise($db); // Instantiate the Customise class
+   $resultCustom = $customObj->readCustomiseHeaderImage(); // Call to readCustomiseHeaderImage method of the Post class
+
 
 ?>
 
@@ -33,7 +34,7 @@ include("includes/header_front.php");
          </div>
       <div class="col-md-8 border-1 div-post-text">
          <h2><a style="color: #44868F;" href="detail.php?id=<?php echo $post->id; ?>"><?php echo $post->title; ?></a></h2>
-         <small class="post-date">Creation date: <?php echo dateFormat($post->created_date); ?></small>
+         <small class="post-date">Creation date: <?php echo dateFormat($post->created_date); ?></small> <!-- Call to dateFormat function (helpers/helpers.php)-->
          <div class="post-text">
             <?php echo substr($post->text, 0, 260) . "..."; ?>
             <a style="color: #44868F;" href="detail.php?id=<?php echo $post->id; ?>"><strong>read more.</strong></a>
