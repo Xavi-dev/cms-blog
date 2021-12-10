@@ -8,6 +8,7 @@ Publish comments for registered users.
 Approval or deletion of comments.
 
 Customization:
+
 Logo navigation bar.
 Header image.
 Social icons and links.
@@ -15,13 +16,15 @@ Footer text.
 Cookies page text.
 Text of the privacy policy page.
 
-Para empezar:
+-------> IMPORTANT TO GET STARTED:
 
-- Escribe tus datos de conexión en config/BaseMysql.php.
-- Define tus enlaces en config/config.php
+Write your connection details in config/BaseMysql.php.
+Define your links in config/config.php.
+
 
 
 MYSQL DATABASE:
+
 
 ---------- COMMENTS TABLE ----------
 
@@ -41,6 +44,8 @@ ALTER TABLE `comments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 COMMIT;
 
+
+
 ---------- COOKIES PAGE TABLE ----------
 
 CREATE TABLE `customise_cookies_text` (
@@ -56,6 +61,8 @@ ALTER TABLE `customise_cookies_text`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
+
+
 ---------- FOOTER TABLE ----------
 
 CREATE TABLE `customise_footer_text` (
@@ -69,6 +76,8 @@ ALTER TABLE `customise_footer_text`
 ALTER TABLE `customise_footer_text`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
+
+
 
 -------- HEADER IMAGE TABLE ----------
 
@@ -84,6 +93,8 @@ ALTER TABLE `customise_header_image`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
+
+
 -------- LOGO TABLE ----------
 
 CREATE TABLE `customise_logo` (
@@ -97,6 +108,8 @@ ALTER TABLE `customise_logo`
 ALTER TABLE `customise_logo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 COMMIT;
+
+
 
 -------- PRIVACY PAGE TABLE ----------
 
@@ -113,6 +126,8 @@ ALTER TABLE `customise_privacy_text`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
+
+
 ---------- SOCIAL ICON 1 TABLE ----------
 
 CREATE TABLE `customise_social_icon1` (
@@ -127,6 +142,8 @@ ALTER TABLE `customise_social_icon1`
 ALTER TABLE `customise_social_icon1`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 COMMIT;
+
+
 
 ---------- SOCIAL ICON 2 TABLE ----------
 
@@ -143,6 +160,8 @@ ALTER TABLE `customise_social_icon2`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 COMMIT;
 
+
+
 ---------- SOCIAL ICON 3 TABLE ----------
 
 CREATE TABLE `customise_social_icon1` (
@@ -157,6 +176,8 @@ ALTER TABLE `customise_social_icon3`
 ALTER TABLE `customise_social_icon3`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 COMMIT;
+
+
 
 ---------- SOCIAL ICON 4 TABLE ----------
 
@@ -173,6 +194,8 @@ ALTER TABLE `customise_social_icon4`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 COMMIT;
 
+
+
 ---------- SOCIAL ICON 5 TABLE ----------
 
 CREATE TABLE `customise_social_icon5` (
@@ -187,6 +210,8 @@ ALTER TABLE `customise_social_icon5`
 ALTER TABLE `customise_social_icon5`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 COMMIT;
+
+
 
 ---------- POSTS TABLE ----------
 
@@ -205,6 +230,8 @@ ALTER TABLE `posts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
+
+
 ---------- ROLES TABLE ----------
 
 CREATE TABLE `roles` (
@@ -215,6 +242,8 @@ CREATE TABLE `roles` (
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`);
 COMMIT;
+
+
 
 ---------- USERS TABLE ----------
 
