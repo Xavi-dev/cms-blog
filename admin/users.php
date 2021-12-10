@@ -2,11 +2,11 @@
 
 include("../includes/header-code.php");
 
-$dataBase = new Basemysql();
+$dataBase = new Basemysql();  // Connect to database
 $db = $dataBase->connect();
 
-$users = new User($db);
-$result = $users->read();
+$users = new User($db);  // Instantiate User class
+$result = $users->read();  // Call read method of the User class
 
 ?>
 
@@ -20,7 +20,6 @@ $result = $users->read();
         <?php endif; ?>
     </div>
 </div>
-
 
 <div class="container mt-5">
 
