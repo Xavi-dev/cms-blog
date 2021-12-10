@@ -1,14 +1,16 @@
+/* Typographies */
+
 @font-face {
   font-family: 'ubuntulight';
-  src: url('../../fonts/ubuntu-l-webfont.woff2') format('woff2'),
-       url('../../fonts/ubuntu-l-webfont.woff') format('woff');
+  src: url('../fonts/ubuntu-l-webfont.woff2') format('woff2'),
+       url('../fonts/ubuntu-l-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'ubunturegular';
-  src: url('../../fonts/ubuntu-r-webfont.woff2') format('woff2'),
-       url('../../fonts/ubuntu-r-webfont.woff') format('woff');
+  src: url('../fonts/ubuntu-r-webfont.woff2') format('woff2'),
+       url('../fonts/ubuntu-r-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -19,23 +21,24 @@
   background: #212529;
 }
 
-/*.btn-green {background: #449BA7; border: none;}
-.btn-green:hover {background: #3b8791; border: none;}
-.btn-brown {background: #E9B96E; border: none;}
-.btn-brown:hover {background: #e4ab4e; border: none;}
-.btn-red {background: #DA5655; border: none;}
-.btn-red:hover {background: #d64343; border: none;}
-.green-link:hover {color: #449BA7;}*/
 .class-body {background: #fafafa; font-family: 'ubuntulight'; color: #242929;}
+.ubuntu-r {font-family: 'ubunturegular';}
+a {text-decoration: none; color: #fafafa;}
 .text-085rem {font-size: 0.85rem;}
 .table-bg-grey {background: #F1F3F3;}
 .color-green {color: #32727B;}
 .color-green:hover {color: #66AEB7;}
 .color-footer-link:hover {color: #66AEB7;}
+.form-control:focus {box-shadow: none;}
+.form-select:focus {box-shadow: none;}
+
+footer p {margin: 0;}
+footer p a:hover {color: #6C757D;} 
 
 .message {position: absolute; left: 20px; right: 20px; top: 65px; z-index: 1; padding: 8px 40px 10px 12px; font-family: 'ubunturegular';}
-
 #x-alert {padding: 0.7rem 0.7rem;}
+
+/* Colors */
 
 .grey-color {color: #404040;}
 .green-color {color: #92cbd3}
@@ -43,7 +46,6 @@
 .bg-grey-color {background: #404040;}
 .bg-green-color {background: #4aa9b5}
 .bg-red-color {background: #F04444;}
-.ubuntu-r {font-family: 'ubunturegular';}
 
 /* ---------------------------- Nav bar ----------------------------- */
 
@@ -83,18 +85,10 @@
   z-index: 1;
 }
 
-.form-control:focus {box-shadow: none;}
-.form-select:focus {box-shadow: none;}
-
-a {text-decoration: none; color: #fafafa;}
-
 .navbar-toggler:focus {box-shadow: none;}
 .navbar-toggler {border: none; padding: 0;}
 .navbar {padding: 0;}
-footer p {margin: 0;}
-footer p a:hover {color: #6C757D;} 
 .logo-nav {max-width: 250px; max-height: 40px; padding: 3px; margin-right: 20px;}
-
 
 /*///////////////////////////////// PC STYLES + BIG PC STYLES MIN: 1200px /////////////////////////*/
 
