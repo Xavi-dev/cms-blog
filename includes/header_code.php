@@ -30,7 +30,7 @@ session_start();   // initialise session
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
          <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">    <!-- Bootstrap css link -->
-         <link rel="stylesheet" href="../css-blog/style-blog.css">    <!-- Styles css link -->
+         <link rel="stylesheet" href="css-blog/style-blog.css">    <!-- Styles css link -->
          <title>CRM BLOG</title>
    </head>
 
